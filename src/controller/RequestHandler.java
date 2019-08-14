@@ -43,6 +43,16 @@ public abstract class RequestHandler {
 		return null;
 	}
 
+	protected String statusToJSON (String status) {
+		StringBuffer json = new StringBuffer();
+
+		json.append("{ \"status\" : \"");
+		json.append(status);
+		json.append("\"}");
+
+		return json.toString();
+	}
+
 
 
 

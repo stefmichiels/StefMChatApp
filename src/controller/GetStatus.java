@@ -12,7 +12,8 @@ public class GetStatus extends RequestHandler {
         Controller.setSendJson();
         Person person = (Person) request.getSession().getAttribute("user");
         if(person.getStatus() != null){
-            return toJSON(person.getStatus());
+
+            return statusToJSON(person.getStatus());
         }else {
             return "No_status";
         }

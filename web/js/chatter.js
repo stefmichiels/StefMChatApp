@@ -38,3 +38,14 @@ function getChat(){
         });
     }
 }
+
+function showOnlineJQ() {
+    $.getJSON("Controller?action=GetOnline", function(result){
+        var html = "<p>" + "Online: " + result[0].online + "    Offline: " + result[0].offline + "</p>";
+        $('#onlinejq').html(html);
+        setTimeout(showOnlineJQ,10000);
+
+    })
+
+
+}

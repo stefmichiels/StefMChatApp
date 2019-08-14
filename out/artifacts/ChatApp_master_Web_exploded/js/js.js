@@ -18,8 +18,8 @@ function changeStatus() {
 function getStatus() {
 
     xhr.open("GET", "Controller?action=GetStatus");
-    xhr.onreadystatechange = getData;
     xhr.send(null);
+    xhr.onreadystatechange = getData;
 }
 
 function getData() {
@@ -27,18 +27,19 @@ function getData() {
         if (xhr.status === 200){
             let serverResponse = JSON.parse(xhr.responseText);
             let statusXML = serverResponse.status;
+            window.alert(serverResponse);
             let div = document.getElementById("status");
             let p = div.childNodes[0];
             if (p == null){
                 p = document.createElement("p");
                 p.id = "statustext";
-                let statustesxt = document.createTextNode(statusXML);
-                p.appendChild(statustesxt);
+                let statustext = document.createTextNode(statusXML);
+                p.appendChild(statustext);
                 div.appendChild(p);
             }else{
-                let statustesxt = document.createTextNode(statusXML);
+                let statustext = document.createTextNode(statusXML);
                 p.removeChild(p.childNodes[0]);
-                p.appendChild(statustesxt);
+                p.appendChild(statustext);
             }
         }
     }

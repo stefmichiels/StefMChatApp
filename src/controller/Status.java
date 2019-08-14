@@ -13,16 +13,8 @@ public class Status extends RequestHandler {
         Person person = (Person) session.getAttribute("user");
         getPersonService().changeStatus(request.getParameter("status"), person);
         Controller.setSendJson();
-        return toJSON(person.getStatus());
+        return statusToJSON(person.getStatus());
     }
 
-    private String toJSON (String status) {
-        StringBuffer json = new StringBuffer();
 
-        json.append("{ \"status\" : \"");
-        json.append(status);
-        json.append("\"}");
-
-        return json.toString();
-    }
 }

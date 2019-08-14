@@ -16,7 +16,7 @@ function showOnline(){
         if(xHRObjectOnline.status===200){
             let serverResponse = JSON.parse(xHRObjectOnline.responseText);
             let html ="";
-            html = html + "<li>" + "Online: " + serverResponse[0].online + "Offline: " + serverResponse[0].offline + "</li>";
+            html = html + "<li>" + "Online: " + serverResponse[0].online + "    Offline: " + serverResponse[0].offline + "</li>";
             document.getElementById("friendsonline").innerHTML = html;
             setTimeout(getFriendsOnline,7000);
         }

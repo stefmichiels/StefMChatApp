@@ -15,6 +15,7 @@ public class GetOnline extends RequestHandler {
         int online = 0;
         int offline=0;
         Controller.setSendJson();
+
         if(user != null){
             List<Person> friendslist = user.getFriends();
             for(Person p: friendslist){
@@ -26,6 +27,16 @@ public class GetOnline extends RequestHandler {
                 }
             }
 
+        }
+        else{
+            for(Person p: getPersonService().getPersons()){
+                if(!p.getStatus().equals("Offline")){
+                    online++;
+                }
+                else{
+                    offline++;
+                }
+            }
         }
         return "[{" +  "\"online\":\"" + online + "\"," +
                 "\"offline\":\"" + offline + "\"}]";
