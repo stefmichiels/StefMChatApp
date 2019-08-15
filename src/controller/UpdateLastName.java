@@ -28,6 +28,7 @@ public class UpdateLastName extends RequestHandler{
             getPersonService().getPerson(request.getParameter("userId")).setLastName(request.getParameter("lastName"));
             return toJSON(user.getLastName());
         }
+        
     }
 
 
