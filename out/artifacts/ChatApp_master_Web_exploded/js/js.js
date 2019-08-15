@@ -27,7 +27,6 @@ function getData() {
         if (xhr.status === 200){
             let serverResponse = JSON.parse(xhr.responseText);
             let statusXML = serverResponse.status;
-            window.alert(serverResponse);
             let div = document.getElementById("status");
             let p = div.childNodes[0];
             if (p == null){
