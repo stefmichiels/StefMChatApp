@@ -42,7 +42,7 @@
 				<input type="password" id="password" name="password" value="t">
 			</p>
 			<p>
-				<input type="submit" id="loginbutton" value="Log in">
+				<input type="submit" id="loginbutton" value="Log in" onclick="close()">
 			</p>
 		</form>
 		<br>

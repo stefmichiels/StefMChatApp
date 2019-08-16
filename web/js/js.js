@@ -1,5 +1,4 @@
 let xhr = new XMLHttpRequest();
-let xHRStatus = new XMLHttpRequest();
 
 window.onload = function(){
     getStatus();

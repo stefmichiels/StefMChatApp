@@ -19,6 +19,7 @@ public class AddFriends extends RequestHandler {
             person.addFriend(friend);
         }
         response.setContentType("application/json");
-        return this.toJSON(getPersonService().getPersons());
+        Controller.sendHtml();
+        return "chat.jsp";
     }
 }
